@@ -2,11 +2,17 @@ package petshop.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import petshop.utilities.Driver;
 
 import java.util.List;
 
-public class NavigatePetshopPage  extends BasePage{
+public class NavigatePetshopPage  {
    // public class NavigatePetshopPage extends BasePage {
+
+    public NavigatePetshopPage() {
+        PageFactory.initElements(Driver.get(), this);
+    }
 
     @FindBy(className = "ps-cta-button")
     public WebElement goShopping;
